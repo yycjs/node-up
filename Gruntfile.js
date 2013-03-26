@@ -71,22 +71,16 @@ module.exports = function(grunt) {
     concat: {
       js: {
         src: [
-          "<banner:meta.banner>",
-          "tmp/js/lib/bootstrap-transition.js",
-          "tmp/js/lib/bootstrap-collapse.js",
-          "tmp/js/lib/bootstrap-tooltip.js",
-          "tmp/js/app/app.js"
+          "<banner:meta.banner>"
+          // TODO: Fill this in :-)
         ],
-        dest: "tmp/js/petrofeed-<%= pkg.version %>.js"
+        dest: "tmp/js/gam-<%= pkg.version %>.js"
       },
       // We don't need to do this, as the LESS compiler will put all of our files together.
       css: {
         src: [
-          "<banner:meta.banner>",
-          "tmp/css/bootstrap.css",
-          "tmp/css/bootstrap-responsive.css",
-          "tmp/css/fontello.css",
-          "tmp/css/style.css"
+          "<banner:meta.banner>"
+          // TODO: Fill this in :-)
         ],
         dest: "tmp/css/gam-<%= pkg.version %>.css"
       }
@@ -114,13 +108,7 @@ module.exports = function(grunt) {
 
     /* Curating/File Management
     =======================================================*/
-    clean: {
-      options: {
-        force: true
-      },
-      all: ['deploy/**/*', 'tmp/**/*'],
-      release: ['tmp/']
-    },
+    // TODO: Add clean directive here :-)
     copy: {
       dev: {
         files: [
@@ -142,14 +130,7 @@ module.exports = function(grunt) {
       'dev': {
         options: {
           variables: {
-            'styles': '<link rel="stylesheet" type="text/css" href="css/bootstrap.css">\r' +
-                   '<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">\r' +
-                   '<link rel="stylesheet" type="text/css" href="css/fontello.css">\r' +
-                   '<link rel="stylesheet" type="text/css" href="css/style.css">',
-            // 'styles': '/css/gam-<%= pkg.version %>.css',
-            'scripts': '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>\r' +
-                  '<script src="js/lib/bootstrap-transition.js"></script>\r' +
-                  '<script src="js/lib/bootstrap-collapse.js"></script>'
+            // TODO: Fill this in :-)
           },
           prefix: '@@'
         },
@@ -160,8 +141,7 @@ module.exports = function(grunt) {
       'release': {
         options: {
           variables: {
-            'styles': '<link rel="stylesheet" type="text/css" href="css/gam-<%= pkg.version %>.min.css">',
-            'scripts': '<script src="js/gam-<%= pkg.version %>.min.js"></script>'
+            // TODO: Fill this in :-)
           },
           prefix: '@@'
         },
@@ -173,7 +153,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
+  // TODO: require the contrib-clean task here :-)
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-mincss');
@@ -190,7 +170,7 @@ module.exports = function(grunt) {
 
   // Development Tasks
   // --------------------------------------------------
-  grunt.registerTask('development', ['clean:all', 'copy:stage', 'replace:dev', 'copy:dev']);
+  grunt.registerTask('development', []); // TODO: Define the directives here :-)
 
   // Release Tasks
   // --------------------------------------------------
