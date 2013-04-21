@@ -2,7 +2,7 @@
 
 ---
 
-## Take the leap
+## Take the LEAP
 
 <a style="text-align: center; display: block; border: none;" href="https://www.leapmotion.com/"><img src="images/leap_logo.png" alt="Leap Motion Logo" /></a>
 
@@ -83,6 +83,12 @@ And run it like:
 
 ---
 
+## Cloud Hosting
+
+![Heroku logo](images/heroku-logo.png)
+
+---
+
 ## Node Web Frameworks
 
 - Express
@@ -117,9 +123,32 @@ Most popular and stable web framework for NodeJS
 
 ## MongoDB
 
+![MongoDB logo](images/mongodb-logo.png)
+
+* Document Oriented Database
+* Freaking Fast
+* Easily Scalable & Maintainable
+* Supports Geo Spatial Queries
+* Now has full text search
+
 ---
 
 ## Mongoskin
+
+* Wrapper on top of [node-mongodb-native](https://github.com/mongodb/node-mongodb-native)
+* Provides nicer syntax than the native client
+* Can do everything you can do in the MongoDB console client
+
+		!javascript
+		var mongo = require('mongoskin');
+
+		mongo.db('localhost:27017/testdb')
+			.collection('blog')
+			.find()
+			.toArray(function (err, items) {
+				console.dir(items);
+			});
+
 
 ---
 
@@ -129,5 +158,6 @@ Most popular and stable web framework for NodeJS
 
 ## Next Month
 
-* Something awesome
+* Client Side MVC's!
+* Moving our client side to [CanJS](http://canjs.us)
 * More awesomeness
