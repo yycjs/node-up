@@ -1,6 +1,7 @@
 {
-  "name": "slide-template",
-  "description": "The YYCJS slide template",
+  "name": "node-up",
+  "description": "Server Side JS FTW",
+  "private": true,
   "version": "0.3.0",
   "homepage": "http://yycjs.com",
   "repository": {
