@@ -88,7 +88,7 @@
             </aside>
             
             <aside class="page_number">
-              1/15
+              1/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -120,7 +120,7 @@
             </aside>
             
             <aside class="page_number">
-              2/15
+              2/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -158,7 +158,7 @@
             </aside>
             
             <aside class="page_number">
-              3/15
+              3/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -192,7 +192,7 @@
             </aside>
             
             <aside class="page_number">
-              4/15
+              4/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -230,7 +230,7 @@
             </aside>
             
             <aside class="page_number">
-              5/15
+              5/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -262,7 +262,7 @@
             </aside>
             
             <aside class="page_number">
-              6/15
+              6/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -301,7 +301,7 @@
             </aside>
             
             <aside class="page_number">
-              7/15
+              7/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -344,7 +344,49 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              8/15
+              8/16
+            </aside>
+            <img class="logo" src="theme/img/yycjs-logo.png">
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Serving an HTML file</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;text/html&#39;</span><span class="p">});</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">1337</span><span class="p">,</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running at http://127.0.0.1:1337/&#39;</span><span class="p">);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -375,7 +417,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              9/15
+              10/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -413,7 +455,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              10/15
+              11/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -434,6 +476,12 @@ Server running at http://127.0.0.1:1337/
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/hello.txt&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
   <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
+        <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Hello world&quot;</span>
+    <span class="p">})</span>
 <span class="p">});</span>
 
 <span class="c1">// Statically serve files in the public/ folder</span>
@@ -458,7 +506,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              11/15
+              12/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -496,7 +544,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              12/15
+              13/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -543,7 +591,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              13/15
+              14/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -572,7 +620,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              14/15
+              15/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -607,7 +655,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              15/15
+              16/16
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -664,38 +712,43 @@ Server running at http://127.0.0.1:1337/
         </tr>
         
         <tr id="toc-row-9" class="sub">
-          <th><a href="#slide9">Cloud Hosting</a></th>
+          <th><a href="#slide9">Serving an HTML file</a></th>
           <td><a href="#slide9">9</a></td>
         </tr>
         
         <tr id="toc-row-10" class="sub">
-          <th><a href="#slide10">Node Web Frameworks</a></th>
+          <th><a href="#slide10">Cloud Hosting</a></th>
           <td><a href="#slide10">10</a></td>
         </tr>
         
         <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11"><a href="http://expressjs.com/">Express</a></a></th>
+          <th><a href="#slide11">Node Web Frameworks</a></th>
           <td><a href="#slide11">11</a></td>
         </tr>
         
         <tr id="toc-row-12" class="sub">
-          <th><a href="#slide12">MongoDB</a></th>
+          <th><a href="#slide12"><a href="http://expressjs.com/">Express</a></a></th>
           <td><a href="#slide12">12</a></td>
         </tr>
         
         <tr id="toc-row-13" class="sub">
-          <th><a href="#slide13">Mongoskin</a></th>
+          <th><a href="#slide13">MongoDB</a></th>
           <td><a href="#slide13">13</a></td>
         </tr>
         
         <tr id="toc-row-14" class="sub">
-          <th><a href="#slide14">Login</a></th>
+          <th><a href="#slide14">Mongoskin</a></th>
           <td><a href="#slide14">14</a></td>
         </tr>
         
         <tr id="toc-row-15" class="sub">
-          <th><a href="#slide15">Next Month</a></th>
+          <th><a href="#slide15">Login</a></th>
           <td><a href="#slide15">15</a></td>
+        </tr>
+        
+        <tr id="toc-row-16" class="sub">
+          <th><a href="#slide16">Next Month</a></th>
+          <td><a href="#slide16">16</a></td>
         </tr>
         
       

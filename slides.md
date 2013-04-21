@@ -80,6 +80,21 @@ And run it like:
 	% node example.js
 	Server running at http://127.0.0.1:1337/
 
+---
+
+## Serving an HTML file
+
+	!javascript
+	var http = require('http');
+	var fs = require('fs');
+
+	http.createServer(function (req, res) {
+		fs.readFile('index.html', function(error, data) {
+			res.writeHead(200, {'Content-Type': 'text/html'});
+	  		res.end(data);
+		});
+	}).listen(1337, '127.0.0.1');
+	console.log('Server running at http://127.0.0.1:1337/');
 
 ---
 
@@ -111,6 +126,12 @@ Most popular and stable web framework for NodeJS
 
 	app.get('/hello.txt', function(req, res){
 	  res.send('Hello World');
+	});
+
+	app.get('data', function(req, res) {
+		res.json({
+			message: "Hello world"
+		})
 	});
 
 	// Statically serve files in the public/ folder
