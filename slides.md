@@ -56,7 +56,8 @@
 
 ## Modules
 
-- NPM
+- __N__ode __P__ackage __M__anager
+
 - CommonJS modules
 - package.json
 
@@ -82,7 +83,7 @@ And run it like:
 
 ---
 
-## Overview of Web Frameworks
+## Node Web Frameworks
 
 - Express
 - Flatiron
@@ -93,9 +94,25 @@ And run it like:
 
 ---
 
-## Express
+## [Express](http://expressjs.com/)
 
-- Demo
+Most popular and stable web framework for NodeJS
+
+
+	!javascript
+	var express = require('express');
+	var app = express();
+
+	app.get('/hello.txt', function(req, res){
+	  res.send('Hello World');
+	});
+
+	// Statically serve files in the public/ folder
+	app.use(express.static('public/'));
+
+	app.listen(3000);
+	console.log('Listening on port 3000');
+
 ---
 
 ## MongoDB
