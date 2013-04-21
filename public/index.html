@@ -15,10 +15,7 @@
     ==================================== -->
     <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Prosto+One' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" type="text/css" href="css/fontello.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    @@styles
 
     <!-- Fav and Touch Icons
     ==================================== -->
@@ -51,7 +48,7 @@
               <form class="navbar-search pull-left visible-desktop">
                 <input type="text" class="search-query" placeholder="Search">
               </form>
-              <a href="#" class="btn pull-right">Login or Signup</a>
+              <a href="#" class="btn pull-right" id="loginButton">Login or Signup</a>
             </div>
           </div>
         </div>
@@ -74,74 +71,7 @@
           </div>
         </header>
 
-        <div class="container profiles">
-          <div class="row">
-            <h1>Recent Stories...</h1>
-          </div>
-          <div class="row">
-            <ul class="thumbnails">
-              <li class="span4">
-                <div class="thumbnail">
-                  <img class="profile" src="img/angelica.jpg" alt="angelica">
-                  <div class="caption">
-                    <h3>Angelica</h3>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="span4">
-                <div class="thumbnail">
-                  <img class="profile" src="img/frank.jpg" alt="frank">
-                  <div class="caption">
-                    <h3>Frank</h3>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="span4">
-                <div class="thumbnail">
-                  <img class="profile" src="img/betty.jpg" alt="betty">
-                  <div class="caption">
-                    <h3>Betty</h3>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="row">
-            <ul class="thumbnails">
-              <li class="span4">
-                <div class="thumbnail">
-                  <img class="profile" src="img/timmy.jpg" alt="timmy">
-                  <div class="caption">
-                    <h3>Timmy</h3>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="span4">
-                <div class="thumbnail">
-                  <img class="profile" src="img/julie.jpg" alt="julie">
-                  <div class="caption">
-                    <h3>Julie</h3>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="span4">
-                <div class="thumbnail">
-                  <img class="profile" src="img/mary.jpg" alt="mary">
-                  <div class="caption">
-                    <h3>Mary</h3>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <div class="container profiles"></div>
 
         <hr>
 
@@ -196,8 +126,65 @@
       </div>
     </footer>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="js/lib/bootstrap-transition.js"></script>
-    <script src="js/lib/bootstrap-collapse.js"></script>
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+    @@scripts
+
+    <script type="application/x-mustache" id="login">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">{{header}}</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Email</label>
+            <div class="controls">
+              <input type="text" id="inputEmail" placeholder="Email">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div class="controls">
+              <input type="password" id="inputPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label"><a href="#" class="toggleSignup">Signup</a></label>
+          </div>
+          <div class="control-group signup" style="display: none;">
+            <label class="control-label" for="inputPasswordRepeat">Repeat</label>
+            <div class="controls">
+              <input type="password" id="inputPasswordRepeat" placeholder="Repeat Password">
+            </div>
+          </div>          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary submit">Submit</button>
+      </div>
+    </script>
+
+    <script type="application/x-mustache" id="profiles">
+      <div class="row">
+        <h1>Recent Stories...</h1>
+      </div>
+      <div class="row">
+        <ul class="thumbnails">
+          {{#profiles}}
+          <li class="span4">
+            <div class="thumbnail">
+              <img class="profile" src="{{image}}" alt="{{name}}">
+              <div class="caption">
+                <h3>{{name}}</h3>
+                <p>{{description}}</p>
+              </div>
+            </div>
+          </li>
+          {{/profiles}}
+        </ul>
+      </div>
+    </script>
   </body>
 </html>

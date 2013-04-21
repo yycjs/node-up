@@ -15,72 +15,29 @@ module.exports = function(grunt) {
         ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
     },
 
-    /* Testing
-    =======================================================*/
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        forin: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        noempty: true,
-        nonew: true,
-        regexp: true,
-        undef: true,
-        trailing: true,
-        boss: true,
-        browser: true,
-        jquery: true,
-        node: true
-      },
-      globals: {},
-      grunt: {
-        options: this.options,
-        globals: {
-          'task': true,
-          'config': true,
-          'file': true,
-          'log': true,
-          'template': true
-        }
-      },
-      src: {
-        options: this.options,
-        globals: {
-          '$': true,
-          '_': true
-        }
-      },
-      test: {
-        options: this.options,
-        globals: {
-          '$': true,
-          '_': true,
-          'module': true,
-          'chai': true,
-          'mocha': true
-        }
-      }
-    },
-
     /* Concatentation 
     =======================================================*/
     concat: {
       js: {
         src: [
-          "<banner:meta.banner>"
-          // TODO: Fill this in :-)
+          "<banner:meta.banner>",
+          "tmp/components/jquery/jquery.js",
+          "tmp/components/bootstrap/js/bootstrap-modal.js",
+          "tmp/components/mustache/mustache.js",
+          "tmp/js/helper.js",
+          "tmp/js/login.js",
+          "tmp/js/app.js"
         ],
         dest: "tmp/js/gam-<%= pkg.version %>.js"
       },
       // We don't need to do this, as the LESS compiler will put all of our files together.
       css: {
         src: [
-          "<banner:meta.banner>"
-          // TODO: Fill this in :-)
+          "<banner:meta.banner>",
+          "tmp/css/bootstrap.css",
+          "tmp/css/bootstrap-responsive.css",
+          "tmp/css/fontello.css",
+          "tmp/css/style.css"
         ],
         dest: "tmp/css/gam-<%= pkg.version %>.css"
       }
@@ -108,7 +65,13 @@ module.exports = function(grunt) {
 
     /* Curating/File Management
     =======================================================*/
-    // TODO: Add clean directive here :-)
+    clean: {
+      options: {
+        force: true
+      },
+      all: ['deploy/**/*', 'tmp/**/*'],
+      release: ['tmp/']
+    },
     copy: {
       dev: {
         files: [
@@ -130,7 +93,17 @@ module.exports = function(grunt) {
       'dev': {
         options: {
           variables: {
-            // TODO: Fill this in :-)
+            // 'styles': '<link rel="stylesheet" type="text/css" href="css/bootstrap.css">\r' +
+            //        '<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">\r' +
+            //        '<link rel="stylesheet" type="text/css" href="css/fontello.css">\r' +
+            //        '<link rel="stylesheet" type="text/css" href="css/style.css">',
+            'styles': '<link rel="stylesheet" type="text/css" href="css/gam-<%= pkg.version %>.css">',
+            'scripts': '<script src="components/jquery/jquery.js"></script>\r' +
+                    '<script src="components/bootstrap/js/bootstrap-modal.js"></script>\r' +
+                    '<script src="components/mustache/mustache.js"></script>\r' +
+                    '<script src="js/helper.js"></script>\r' +
+                    '<script src="js/login.js"></script>\r' +
+                    '<script src="js/app.js"></script>\r'
           },
           prefix: '@@'
         },
@@ -141,7 +114,8 @@ module.exports = function(grunt) {
       'release': {
         options: {
           variables: {
-            // TODO: Fill this in :-)
+            'styles': '<link rel="stylesheet" type="text/css" href="css/gam-<%= pkg.version %>.min.css">',
+            'scripts': '<script src="js/gam-<%= pkg.version %>.min.js"></script>'
           },
           prefix: '@@'
         },
@@ -153,7 +127,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  // TODO: require the contrib-clean task here :-)
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-mincss');
@@ -170,9 +144,9 @@ module.exports = function(grunt) {
 
   // Development Tasks
   // --------------------------------------------------
-  grunt.registerTask('development', []); // TODO: Define the directives here :-)
+  grunt.registerTask('development', ['clean:all', 'copy:stage', 'concat:css', 'replace:dev', 'copy:dev']);
 
   // Release Tasks
   // --------------------------------------------------
-  grunt.registerTask('release', ['clean:all', 'copy:stage', 'concat', 'uglify', 'mincss', 'replace:release','copy:release', 'clean:release', 'test']);
+  grunt.registerTask('release', ['clean:all', 'copy:stage', 'concat', 'uglify', 'mincss', 'replace:release','copy:release', 'clean:release']);
 };

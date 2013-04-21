@@ -24,11 +24,11 @@
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-mincss": "~0.4.x",
     "grunt-contrib-uglify": "~0.1.1",
-    "grunt-replace": "git+ssh://git@github.com:outaTiME/grunt-replace.git"
+    "grunt-replace": "~0.4.0"
   },
   "scripts": {
     "start": "node static-server.js"
   },
-  "dependencies": {
+  "dependencies": { 
   }
 }
