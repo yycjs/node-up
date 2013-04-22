@@ -110,6 +110,15 @@ And run it like:
 
 ## Cloud Hosting
 
+# Yes that infamous "CLOUD" buzzword.
+
+<br>
+![Cloud Hosting](images/cloud-hosting.png)
+
+---
+
+## We &#9829; Heroku
+
 ![Heroku logo](images/heroku-logo.png)
 
 * Easy to get up and running
