@@ -56,9 +56,14 @@
 
 ## Modules
 
-- __N__ode __P__ackage __M__anager
+### [__N__ode __P__ackage __M__anager]()
 
-- CommonJS modules
+- easy to use (`npm install <package>`)
+- ~28000 modules
+
+### CommonJS modules
+
+- Provides `module`, `exports` and `require()` in a JavaScript file
 - package.json
 
 ---
