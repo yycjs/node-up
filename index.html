@@ -88,7 +88,7 @@
             </aside>
             
             <aside class="page_number">
-              1/18
+              1/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -120,7 +120,7 @@
             </aside>
             
             <aside class="page_number">
-              2/18
+              2/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -158,7 +158,7 @@
             </aside>
             
             <aside class="page_number">
-              3/18
+              3/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -192,7 +192,7 @@
             </aside>
             
             <aside class="page_number">
-              4/18
+              4/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -230,7 +230,7 @@
             </aside>
             
             <aside class="page_number">
-              5/18
+              5/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -250,8 +250,8 @@
 <ul>
 <li>HTTP/HTTPS</li>
 <li>TCP/UDP Sockets</li>
-<li>Event Emitters (Fuck Yeah!)</li>
-<li>Streams (Mind Blowing Fuck Yeah!)</li>
+<li>Event Emitters</li>
+<li>Streams</li>
 <li>Files System Access</li>
 <li>Cross Platform</li>
 </ul></section>
@@ -270,7 +270,7 @@
             </aside>
             
             <aside class="page_number">
-              6/18
+              6/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -285,14 +285,16 @@
             <header><h2>Modules</h2></header>
             
             
-            <section><ul>
-<li>
-<p><strong>N</strong>ode <strong>P</strong>ackage <strong>M</strong>anager</p>
-</li>
-<li>
-<p>CommonJS modules</p>
-</li>
-<li>package.json</li>
+            <section><h3>The <a href="https://npmjs.org"><strong>N</strong>ode <strong>P</strong>ackage <strong>M</strong>anager</a></h3>
+<ul>
+<li>currently hosts ~ 28000 modules</li>
+<li>easy to use (<code>npm install &lt;package&gt;</code>)</li>
+<li>easy to publish (<code>npm publish</code>)</li>
+<li>use it with anything (folders, tarballs, git repositories)</li>
+</ul>
+<h3><a href="http://www.commonjs.org/">CommonJS</a></h3>
+<ul>
+<li>Attempt for JavaScript API standardization</li>
 </ul></section>
             
           </div>
@@ -309,7 +311,108 @@
             </aside>
             
             <aside class="page_number">
-              7/18
+              7/20
+            </aside>
+            <img class="logo" src="theme/img/yycjs-logo.png">
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>CommonJS modules</h2></header>
+            
+            
+            <section><p>Provides global <code>module</code>, <code>exports</code> and <code>require()</code> to define this files API</p>
+<div class="highlight"><pre><span class="c1">// module1.js</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">hello</span> <span class="o">=</span> <span class="s1">&#39;World&#39;</span><span class="p">;</span>
+<span class="c1">// or</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">hello</span><span class="o">:</span> <span class="s1">&#39;World&#39;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Using the module</p>
+<div class="highlight"><pre><span class="c1">// main.js</span>
+<span class="kd">var</span> <span class="nx">mod1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./module1&#39;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mod1</span><span class="p">.</span><span class="nx">hello</span><span class="p">);</span> <span class="c1">// -&gt; World</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/20
+            </aside>
+            <img class="logo" src="theme/img/yycjs-logo.png">
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>package.json</h2></header>
+            
+            
+            <section><p>CommonJS specification for describing JavaScript packages</p>
+<div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;node-up&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;YYCJS &lt;people@yycjs.com&gt;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Server side JavaScript FTW!&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;scripts&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;test&quot;</span><span class="o">:</span> <span class="s2">&quot;mocha test&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start&quot;</span><span class="o">:</span> <span class="s2">&quot;node lib/main.js&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;main&quot;</span><span class="o">:</span> <span class="s2">&quot;./lib/main.js&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;repository&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;git&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;https://github.com/yycjs/node-up&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;somePackage&quot;</span><span class="o">:</span> <span class="s2">&quot;&gt; 1.0.0&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;some-dev-only-package&quot;</span><span class="o">:</span>  <span class="s2">&quot;*&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;license&quot;</span><span class="o">:</span> <span class="s2">&quot;MIT&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -353,7 +456,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              8/18
+              10/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -396,7 +499,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              9/18
+              11/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -429,7 +532,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              10/18
+              12/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -467,7 +570,38 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              11/18
+              13/20
+            </aside>
+            <img class="logo" src="theme/img/yycjs-logo.png">
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>We need more...</h2></header>
+            
+            
+            <section><p><img alt="More cowbell!" src="images/cowbell.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -565,39 +699,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              12/18
-            </aside>
-            <img class="logo" src="theme/img/yycjs-logo.png">
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h2>And There is Still a Shit Ton More!</h2></header>
-            
-            
-            <section><p><br><br><br>
-<img alt="Holy Frameworks Batman" src="images/holy-frameworks.jpg" /></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="slides.md">slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              13/18
+              15/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -609,10 +711,10 @@ Server running at http://127.0.0.1:1337/
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2><a href="http://expressjs.com/">Express</a></h2></header>
+            <header><h2>Express</h2></header>
             
             
-            <section><p>Most popular and stable web framework for NodeJS</p>
+            <section><p><a href="http://expressjs.com/">ExpressJS</a> is Most popular and stable web framework for NodeJS</p>
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
@@ -648,7 +750,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              14/18
+              16/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -686,7 +788,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              15/18
+              17/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -733,7 +835,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              16/18
+              18/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -764,7 +866,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              17/18
+              19/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -799,7 +901,7 @@ Server running at http://127.0.0.1:1337/
             </aside>
             
             <aside class="page_number">
-              18/18
+              20/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -851,58 +953,68 @@ Server running at http://127.0.0.1:1337/
         </tr>
         
         <tr id="toc-row-8" class="sub">
-          <th><a href="#slide8">Web Development</a></th>
+          <th><a href="#slide8">CommonJS modules</a></th>
           <td><a href="#slide8">8</a></td>
         </tr>
         
         <tr id="toc-row-9" class="sub">
-          <th><a href="#slide9">Serving an HTML File</a></th>
+          <th><a href="#slide9">package.json</a></th>
           <td><a href="#slide9">9</a></td>
         </tr>
         
         <tr id="toc-row-10" class="sub">
-          <th><a href="#slide10">Cloud Hosting</a></th>
+          <th><a href="#slide10">Web Development</a></th>
           <td><a href="#slide10">10</a></td>
         </tr>
         
         <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11">We &#9829; Heroku</a></th>
+          <th><a href="#slide11">Serving an HTML File</a></th>
           <td><a href="#slide11">11</a></td>
         </tr>
         
         <tr id="toc-row-12" class="sub">
-          <th><a href="#slide12">Node Web Frameworks</a></th>
+          <th><a href="#slide12">Cloud Hosting</a></th>
           <td><a href="#slide12">12</a></td>
         </tr>
         
         <tr id="toc-row-13" class="sub">
-          <th><a href="#slide13">And There is Still a Shit Ton More!</a></th>
+          <th><a href="#slide13">We &#9829; Heroku</a></th>
           <td><a href="#slide13">13</a></td>
         </tr>
         
         <tr id="toc-row-14" class="sub">
-          <th><a href="#slide14"><a href="http://expressjs.com/">Express</a></a></th>
+          <th><a href="#slide14">We need more...</a></th>
           <td><a href="#slide14">14</a></td>
         </tr>
         
         <tr id="toc-row-15" class="sub">
-          <th><a href="#slide15">MongoDB</a></th>
+          <th><a href="#slide15">Node Web Frameworks</a></th>
           <td><a href="#slide15">15</a></td>
         </tr>
         
         <tr id="toc-row-16" class="sub">
-          <th><a href="#slide16">Mongoskin</a></th>
+          <th><a href="#slide16">Express</a></th>
           <td><a href="#slide16">16</a></td>
         </tr>
         
         <tr id="toc-row-17" class="sub">
-          <th><a href="#slide17">Adding Login &amp; Signup</a></th>
+          <th><a href="#slide17">MongoDB</a></th>
           <td><a href="#slide17">17</a></td>
         </tr>
         
         <tr id="toc-row-18" class="sub">
-          <th><a href="#slide18">Next Month</a></th>
+          <th><a href="#slide18">Mongoskin</a></th>
           <td><a href="#slide18">18</a></td>
+        </tr>
+        
+        <tr id="toc-row-19" class="sub">
+          <th><a href="#slide19">Adding Login &amp; Signup</a></th>
+          <td><a href="#slide19">19</a></td>
+        </tr>
+        
+        <tr id="toc-row-20" class="sub">
+          <th><a href="#slide20">Next Month</a></th>
+          <td><a href="#slide20">20</a></td>
         </tr>
         
       

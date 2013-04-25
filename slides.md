@@ -54,8 +54,8 @@
 
 * HTTP/HTTPS
 * TCP/UDP Sockets
-* Event Emitters (Fuck Yeah!)
-* Streams (Mind Blowing Fuck Yeah!)
+* Event Emitters
+* Streams
 * Files System Access
 * Cross Platform
 
@@ -63,15 +63,68 @@
 
 ## Modules
 
-### [__N__ode __P__ackage __M__anager]()
+### The [__N__ode __P__ackage __M__anager](https://npmjs.org)
 
+- currently hosts ~ 28000 modules
 - easy to use (`npm install <package>`)
-- ~28000 modules
+- easy to publish (`npm publish`)
+- use it with anything (folders, tarballs, git repositories)
 
-### CommonJS modules
+### [CommonJS](http://www.commonjs.org/)
 
-- Provides `module`, `exports` and `require()` in a JavaScript file
-- package.json
+- Attempt for JavaScript API standardization
+
+---
+
+## CommonJS modules
+
+Provides global `module`, `exports` and `require()` to define this files API
+
+	!javascript
+	// module1.js
+	exports.hello = 'World';
+	// or
+	module.exports = {
+		hello: 'World'
+	}
+
+Using the module
+
+	!javascript
+	// main.js
+	var mod1 = require('./module1');
+
+	console.log(mod1.hello); // -> World
+
+---
+
+## package.json
+
+CommonJS specification for describing JavaScript packages
+
+    !javascript
+    {
+      "name": "node-up",
+      "version": "0.1.0",
+      "author": "YYCJS <people@yycjs.com>",
+      "description": "Server side JavaScript FTW!",
+      "scripts": {
+        "test": "mocha test",
+        "start": "node lib/main.js"
+      },
+      "main": "./lib/main.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/yycjs/node-up"
+      },
+      "dependencies": {
+        "somePackage": "> 1.0.0"
+      },
+      "devDependencies": {
+        "some-dev-only-package":  "*"
+      },
+      "license": "MIT"
+    }
 
 ---
 
@@ -131,6 +184,12 @@ And run it like:
 * Really easy to scale up and down
 * 1 FREE Dyno Instance per app
 * Just an all around awesome bunch of people!
+
+---
+
+## We need more...
+
+![More cowbell!](images/cowbell.jpg)
 
 ---
 
@@ -207,16 +266,9 @@ And run it like:
 
 ---
 
-## And There is Still a Shit Ton More!
+## Express
 
-<br><br><br>
-![Holy Frameworks Batman](images/holy-frameworks.jpg)
-
----
-
-## [Express](http://expressjs.com/)
-
-Most popular and stable web framework for NodeJS
+[ExpressJS](http://expressjs.com/) is Most popular and stable web framework for NodeJS
 
 
 	!javascript
