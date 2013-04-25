@@ -2,7 +2,7 @@
 
 ---
 
-## Take the leap
+## Take the LEAP
 
 <a style="text-align: center; display: block; border: none;" href="https://www.leapmotion.com/"><img src="images/leap_logo.png" alt="Leap Motion Logo" /></a>
 
@@ -36,10 +36,10 @@
 
 ## Last Month
 
-### [jQuery, Templating, and Build Tools. Oh My!](http://yycjs.com/jquery-templates-builds)
+# [jQuery, Templating, and Build Tools. Oh My!](http://yycjs.com/jquery-templates-builds)
 
-* [Bower](http://twitter.github.com/bower/)
-* [Bootstrap](http://twitter.github.com/bootstrap/)
+* [Twitter Bower](http://twitter.github.com/bower/)
+* [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 * [Mustache](http://mustache.github.io/)
 * [jQuery](http://jquery.com/)
 * [Grunt](http://gruntjs.com/)
@@ -48,9 +48,16 @@
 
 ## NodeJS
 
-[Node.js](http://nodejs.org/) is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+[Node.js](http://nodejs.org/) is a platform built on Chrome's V8 JavaScript runtime for easily building fast, scalable network applications.
 
 ![NodeJS logo](images/nodejs.png)
+
+* HTTP/HTTPS
+* TCP/UDP Sockets
+* Event Emitters (Fuck Yeah!)
+* Streams (Mind Blowing Fuck Yeah!)
+* Files System Access
+* Cross Platform
 
 ---
 
@@ -68,8 +75,9 @@
 
 ---
 
-## Web development
+## Web Development
 
+<br>
 Create `example.js` like this:
 
 	!javascript
@@ -87,7 +95,9 @@ And run it like:
 
 ---
 
-## Serving an HTML file
+## Serving an HTML File
+
+<br>
 
 	!javascript
 	var http = require('http');
@@ -103,14 +113,104 @@ And run it like:
 
 ---
 
+## Cloud Hosting
+
+# Yes that infamous "CLOUD" buzzword.
+
+<br>
+![Cloud Hosting](images/cloud-hosting.png)
+
+---
+
+## We &#9829; Heroku
+
+![Heroku logo](images/heroku-logo.png)
+
+* Easy to get up and running
+* Lots of third-party add ons
+* Really easy to scale up and down
+* 1 FREE Dyno Instance per app
+* Just an all around awesome bunch of people!
+
+---
+
 ## Node Web Frameworks
 
-- Express
-- Flatiron
-- Sails
-- Locomotive
-- Meteor
-- Derby
+<table class="table centered">
+	<thead>
+		<tr>
+			<th>Framework</th>
+			<th>MVC</th>
+			<th>Realtime</th>
+			<th>Notes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="http://expressjs.com">Express</a></td>
+			<td>&#x2718; *</td>
+			<td>&#x2718; *</td>
+			<td>Loosly based off Sinatra, the defacto framework right now</td>
+		</tr>
+		<tr>
+			<td><a href="http://flatironjs.org/">Flatiron</a></td>
+			<td>&#x2718; *</td>
+			<td>&#x2718; *</td>
+			<td>Module based, very modular, good docs</td>
+		</tr>
+		<tr>
+			<td><a href="http://balderdashy.github.io/sails/">Sails</a></td>
+			<td>&#10004;</td>
+			<td>&#10004;</td>
+			<td>Rails for Node. New but looks promising</td>
+		</tr>
+		<tr>
+			<td><a href="http://locomotivejs.org/">LocomotiveJS</a></td>
+			<td>&#10004;</td>
+			<td>&#x2718; *</td>
+			<td>Similar to above, just not as new and not real time.</td>
+		</tr>
+		<tr>
+			<td><a href="http://meteor.com">Meteor</a></td>
+			<td>&#10004;</td>
+			<td>&#10004;</td>
+			<td>Original ideas but doesn't follow NodeJS convention</td>
+		</tr>
+		<tr>
+			<td><a href="http://towerjs.com">TowerJS</a></td>
+			<td>&#10004;</td>
+			<td>&#10004;</td>
+			<td>Total Rails clone, and in CoffeeScript to boot</td>
+		</tr>
+		<tr>
+			<td><a href="http://derbyjs.com/">Derby</a></td>
+			<td>&#10004;</td>
+			<td>&#10004;</td>
+			<td>Very modular, quite fast, first real-time framework</td>
+		</tr>
+		<tr>
+			<td><a href="http://geddyjs.org">Geddy</a></td>
+			<td>&#10004;</td>
+			<td>&#x2718; *</td>
+			<td>Yet another Rails wannabe, nice website and docs</td>
+		</tr>
+		<tr>
+			<td><a href="http://flams.github.io/olives/">Olives</a></td>
+			<td>&#10004;</td>
+			<td>&#10004;</td>
+			<td>Written by our member Olivier, supports AMD</td>
+		</tr>
+	</tbody>
+</table>
+
+**\* Yes, with either coding style or modules**
+
+---
+
+## And There is Still a Shit Ton More!
+
+<br><br><br>
+![Holy Frameworks Batman](images/holy-frameworks.jpg)
 
 ---
 
@@ -143,17 +243,43 @@ Most popular and stable web framework for NodeJS
 
 ## MongoDB
 
+![MongoDB logo](images/mongodb-logo.png)
+
+* Document Oriented Database
+* Freaking Fast
+* Easily Scalable & Maintainable
+* Supports Geo Spatial Queries
+* Now has full text search
+
 ---
 
 ## Mongoskin
 
+* Wrapper on top of [node-mongodb-native](https://github.com/mongodb/node-mongodb-native) driver
+* Provides nicer syntax than the native client
+* Can do everything you can do in the MongoDB console
+
+		!javascript
+		var mongo = require('mongoskin');
+
+		mongo.db('localhost:27017/testdb')
+			.collection('blog')
+			.find()
+			.toArray(function (err, items) {
+				console.dir(items);
+			});
+
+
 ---
 
-## Login
+## Adding Login & Signup
+
+![Great Success](images/great-success.jpg)
 
 ---
 
 ## Next Month
 
-* Something awesome
+* Client Side MVC's!
+* Moving our client side to [CanJS](http://canjs.us)
 * More awesomeness
