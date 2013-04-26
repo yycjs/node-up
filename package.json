@@ -13,7 +13,7 @@
     "url": "git@github.com:yycjs/jquery-templates-builds.git"
   },
   "engines": {
-    "node": ">0.6.13"
+    "node": ">0.10.x"
   },
   "devDependencies": {
     "express": ">=3.0.0",
