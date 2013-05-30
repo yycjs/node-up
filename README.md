@@ -1,12 +1,15 @@
-### Jquery Plugins, Templates, and Build Tools. Oh My!
+## Node Up! Server Side JS FTW
 
-This session we are covering:
+### What We Covered This Session
 
-* How to write a [jQuery plugin](http://plugins.jquery.com/)
-* What client side templating systems are, what is out there, and how to use [mustache](http://mustache.github.com/)/[handlebars](http://handlebarsjs.com/)
-* A basic intro to [Grunt](http://gruntjs.com/)
-
-We are going to talk about these things and implement them on our [Give a Mile](http://giveamile.org) project.
+* What's Node and why should I use it?
+* Basic server side programming
+* [NodeJS](http://nodejs.org) 101
+* CommonJS modules
+* NodeJS Web Frameworks
+* Web applications with [Express](http://expressjs.com)
+* Persistent storage with [MongoDB](http://mongodb.org) using [MongoSkin](https://github.com/kissjs/node-mongoskin)
+* User registration and login
 
 ### Getting Up and Running In 10 Easy Steps
 
